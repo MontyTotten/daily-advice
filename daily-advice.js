@@ -21,6 +21,7 @@ var day = date.getDate();
 var monthIndex = date.getMonth();
 var year = date.getFullYear();
 var hour = date.getHours();
+var minute = date.getMinutes();
 var dayIndex = date.getDay();
 
 var isWinter = monthIndex >= 11 && monthIndex <= 1;
@@ -28,7 +29,7 @@ var isSpring = monthIndex >= 2 && monthIndex <= 4;
 var isSummer = monthIndex >= 5 && monthIndex <= 7;
 var isAutumn = monthIndex >= 8 && monthIndex <= 10;
 
-var isNight = hour < 5 && hour > 20;
+var isNight = hour <= 5 || hour >= 20;
 var isMorning = hour >= 5 && hour <= 9;
 var isAfternoon = hour >= 12 && hour <= 16;
 var isEvening = hour >= 17 && hour <= 20;
@@ -53,7 +54,7 @@ if (isSpring) {
 		seasonPhrase = 'Go play disc golf with your bros';
 	// Everything other than evening
 	} else {
-		seasonPhrase = 'Enjoy this weather while it lasts';
+		seasonPhrase = 'Make the most of this weather while it lasts';
 	}
 }else if (isSummer) {
 	seasonName = 'Summer';
@@ -68,14 +69,14 @@ else if (isAutumn) {
 	} if (isAfternoon) {
 		timePhrase = 'Only a little bit unil freedom.';
 	} if (isEvening) {
-		timePhrase = 'Enjoy your evening.';
+		timePhrase = 'Time to decompress.';
 	} if (isNight) {
 		timePhrase = 'Rest up for tomorrow';
 	}
 	if (isAfternoon) {
 		seasonPhrase = 'Winter is coming, but it\'s warm outside. For now... ';
 	} if (isEvening) {
-		seasonPhrase = 'Enjoy your porch while you can.'
+		seasonPhrase = 'Enjoy your porch before it gets too cold.'
 	} else {
 		seasonPhrase = 'Winter is coming.';
 
@@ -112,9 +113,9 @@ console.log()
 
 console.log('Hello, here is some advice for '+ monthNames[monthIndex] + ' ' + day + 'th.');
 
-console.log(timePhrase);
+console.log('It\'s '  + standardHour + ':' + minute + '. ' + timePhrase);
 
-console.log(dayPhrase);
+console.log('It\'s ' + dayNames[dayIndex]+'. ' + dayPhrase);
 
 console.log(seasonPhrase);
 
