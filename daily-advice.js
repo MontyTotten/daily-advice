@@ -71,7 +71,7 @@ else if (isAutumn) {
 	} if (isEvening) {
 		timePhrase = 'Time to decompress.';
 	} if (isNight) {
-		timePhrase = 'Rest up for tomorrow';
+		timePhrase = 'Rest up for tomorrow.';
 	}
 	if (isAfternoon) {
 		seasonPhrase = 'Winter is coming, but it\'s warm outside. For now... ';
@@ -115,7 +115,7 @@ console.log('Hello, here is some advice for '+ monthNames[monthIndex] + ' ' + da
 
 console.log('It\'s '  + standardHour + ':' + minute + '. ' + timePhrase);
 
-console.log('It\'s ' + dayNames[dayIndex]+'. ' + dayPhrase);
+console.log('Today is ' + dayNames[dayIndex]+'. ' + dayPhrase);
 
 console.log(seasonPhrase);
 
