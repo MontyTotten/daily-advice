@@ -43,8 +43,32 @@ var isSun = dayIndex === 0;
 var dayPhrase;
 var seasonName;
 var seasonPhrase;
-var timePhrase
+var timePhrase;
 
+
+if (isMorning) {
+	timePhrase = 'Time to be bright-eyed and bushy tailed.';
+} else if (isAfternoon) {
+	timePhrase = 'Only a little bit unil freedom.';
+} else if (isEvening) {
+	timePhrase = 'Time to decompress.';
+} else if (isNight) {
+	timePhrase = 'Rest up for tomorrow.';
+} else {
+	timePhrase = 'Pimento cheese exists. What a time to be alive.';
+}
+
+if (isMonTue) {
+	dayPhrase = 'Rome wasn\'t built in a day.';
+} else if (isWedTh) {
+	dayPhrase = 'Beyond halfway.';
+} else if (isFri) {
+	dayPhrase = 'BEER';
+} else if (isSat) {
+	dayPhrase = 'College Football';
+} else if (isSun) {
+	dayPhrase = 'NFL & NASCAR';
+}
 
 // Spring
 if (isSpring) {
@@ -56,66 +80,57 @@ if (isSpring) {
 	} else {
 		seasonPhrase = 'Make the most of this weather while it lasts';
 	}
-}else if (isSummer) {
+} else if (isSummer) {
 	seasonName = 'Summer';
 	seasonPhrase = 'Prepare to shower repeatedly.';
-}	
-else if (isAutumn) {
+} else if (isAutumn) {
 	seasonName = 'Autumn';
-	}	
-	
-	if (isMorning) {
-		timePhrase = 'Time to be bright-eyed and bushy tailed.';
-	} if (isAfternoon) {
-		timePhrase = 'Only a little bit unil freedom.';
-	} if (isEvening) {
-		timePhrase = 'Time to decompress.';
-	} if (isNight) {
-		timePhrase = 'Rest up for tomorrow.';
+
+	if (isSat) {
+		dayPhrase += "Sat and autumn";
 	}
+
 	if (isAfternoon) {
 		seasonPhrase = 'Winter is coming, but it\'s warm outside. For now... ';
-	} if (isEvening) {
-		seasonPhrase = 'Enjoy your porch before it gets too cold.'
+	} else if (isEvening) {
+		seasonPhrase = 'Enjoy your porch before it gets too cold.';
 	} else {
 		seasonPhrase = 'Winter is coming.';
-
-	}  if (isMonTue) {
-		dayPhrase = 'Rome wasn\'t built in a day.';
-	} if (isWedTh) {
-		dayPhrase = 'Hang in there.';
-	} if (isFri) {
-		dayPhrase = 'BEER';
-	} if (isSat) {
-		dayPhrase = 'College Football';
-	} if (isSun) {
-		dayPhrase = 'NFL';
 	}
- else if (isWinter) {
+} else if (isWinter) {
 	seasonName = 'Winter';
 	seasonPhrase = 'The Starks warned you of this.';
 }
 
 
 
-var timeOfDay 
+var timeOfDay;
+var timePeriod; 
 
 if (hour >= 12) {
 	timePeriod = 'PM';
 	if (hour > 12) {
 		standardHour = hour - 12;
-	}
-} else {
+	} else {
 	timePeriod = 'AM';
-} 
+	} 
+}
+
+if (minute < 10) {
+    minute = "0" + 1;
+}
+
+
+
+
 
 console.log()
 
 console.log('Hello, here is some advice for '+ monthNames[monthIndex] + ' ' + day + 'th.');
 
-console.log('It\'s '  + standardHour + ':' + minute + '. ' + timePhrase);
-
 console.log('Today is ' + dayNames[dayIndex]+'. ' + dayPhrase);
+
+console.log('It\'s '  + (standardHour || hour) + ':' + minute + ' ' + timePeriod + '. '+ timePhrase);
 
 console.log(seasonPhrase);
 
